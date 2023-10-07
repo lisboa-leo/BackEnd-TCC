@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHARM EXPRESS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="shortcut icon" href="./Site/Cabeçalho/PHARM.png" type="image/x-icon">
+</head>
+<body>
+
+<!--Aqui a Seção do cabeçalho começa-->
+
+<header>               
+    <div >
+        <nav class="navbar navbar-light navbar-expand-sm d-flex justify-content-between" style="background-color: #78cdff;">
+            <a href="" class="navbar-brand px-5">
+                <img src="./imagens/Pagina de produtos/PHARM.png" width="70" height="40" class="d-inline-block align-top">
+            </a>
+            <ul class="navbar-nav">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#produtos" class="nav-link">Produtos</a></li>
+                <li><a href="#reveja" class="nav-link">Reveja</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
+            </ul>
+            <ul class="navbar-nav px-5">
+                <li class="nav-item d-flex flex-direction-row align-items-stretch">
+                    <a href="" class="nav-link"><i class="fa-solid fa-user"></i></a>
+                    <a id="bemvindo" th:href="@{login.html}" class="w-27 h6 text-decoration-none">Bem vindo, <br>Acesse aqui o seu perfil!</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link"><i class="fa-solid fa-bars"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!--Aqui Termina a seção do cabeçalho-->
+
+<!--Aqui a seção do inicio começa-->
+
+<section class="inicio" id="inicio">
+
+    <div class="content">
+
+        
+    </div>
+
+</section>
+
+
+<!--Aqui Termina a seção do inicio-->
+
+<!--Aqui começa o sobre da pagina-->
+
+<section class="sobre" id="sobre">
+
+    <h1 class="cabecalhos">Sobre Nós</h1>
+
+    <div class="fileira">
+
+        <div class="imagem">
+            <img src="./imagens/sobre/fotosobre.png" alt="">
+        </div>
+
+        <div class="content">
+            <h3>Sobre o nosso projeto</h3>
+            <p>Nós somos um grupo de estudantes do curso de Informática do ITB Brásilio Flores de Azevedo, unidos por uma missão única: tornar a saúde mais acessível e acolhedora para todos. O nosso projeto, uma Farmácia Online e Aplicativo, destaca-se pelo compromisso em oferecer o melhor atendimento aos nossos clientes, a qualquer hora do dia. Queremos que as pessoas tenham acesso fácil à saúde e se sintam verdadeiramente acolhidas em nossa plataforma. Junte-se a nós nesta jornada em prol do bem-estar de todos!</p>
+           
+            <a href="#" class="btn">Saiba Mais</a>
+        </div>
+    </div>
+
+</section>
+
+<!--Aqui termina o sobre da pagina-->
+
+
+<!--Aqui começa os produtos da pagina-->
+
+<section class="produtos" id="produtos">
+    <h1 class="cabecalhos">Nossos Produtos</h1>
+
+    <div class="box-container">
+
+        <div class="caixa">
+            <div class="icones">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="imagem">
+                <img src="./imagens/Produtos/produto-1.png" alt="">
+            </div>
+            <div class="content">
+                <h3>Neosaldina 300 + 30 + 30mg 20 Drágeas - Drogaria Pague Menos</h3>
+                <div class="estrelas">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="preço">R$20,72/- <span>R$27,62</span></div>
+            </div>
+        </div>
+
+        <div class="caixa">
+            <div class="icones">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="imagem">
+                <img src="./imagens/Produtos/produto-2.png" alt="">
+            </div>
+            <div class="content">
+                <h3>Tandrilax contém 30 comprimidos - Drogaria Santa Lúcia</h3>
+                <div class="estrelas">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="preço">R$25,15/- <span>R$28,64</span></div>
+            </div>
+        </div>
+
+        <div class="caixa">
+            <div class="icones">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="imagem">
+                <img src="./imagens/Produtos/tadalafila.png" alt="">
+            </div>
+            <div class="content">
+                <h3>TADALAFILA DIÁRIO 5MG COM 28 COMPRIMIDOS GENÉRICO NEO QUÍMICA</h3>
+                <div class="estrelas">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="preço">R$24,19/- <span>R$85,41</span></div>
+            </div>
+        </div>
+        <div class="caixa">
+            <div class="icones">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="imagem">
+                <img src="./imagens/Produtos/principia.png" alt="">
+            </div>
+            <div class="content">
+                <h3>Principia MIX-02</h3>
+                <div class="estrelas">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="preço">R$59,00</div>
+            </div>
+        </div>
+        <div class="caixa">
+            <div class="icones">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="imagem">
+                <img src="./imagens/Produtos/produto-3.png" alt="">
+            </div>
+            <div class="content">
+                <h3>Torsilax contém 30 Comprimidos - Drogaria São Paulo</h3>
+                <div class="estrelas">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="preço">R$18,55/- <span>R$27,79</span></div>
+            </div>
+        </div>
+        <div class="caixa">
+            <div class="icones">
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-eye"></a>
+            </div>
+            <div class="imagem">
+                <img src="./imagens/Produtos/cimegripe.png" alt="">
+            </div>
+            <div class="content">
+                <h3>Cimegripe Cápsula 400mg + 4mg + 4mg, caixa com 20 cápsulas gelatinosas duras</h3>
+                <div class="estrelas">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="preço">R$10,35/- <span>R$26,67</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Aqui termina os produtos da pagina-->
+
+<!--Aqui começa o reveja da pagina-->
+
+<section class="reveja" id="reveja">
+
+    <h1 class="cabecalhos"> Avaliação dos Clientes</h1>
+
+    <div class="box-container">
+
+        <div class="caixa">
+            <img src="./imagens/review/quote-img.png" alt="" class="quote">
+            <p>Depois de muitos anos procurando uma cura para a minha calvície, finalmente consegui um remédio eficiente.
+                Essa farmácia salvou minha vida!</p>
+            <img src="./imagens/review/pikachu.png" alt="" class="usuario">
+            <h3>Godofredo Mandraki</h3>
+            <div class="estrelas">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+        </div>
+
+        <div class="caixa">
+            <img src="./imagens/review/quote-img.png" alt="" class="quote">
+            <p>Tive uma experiência maravilhosa com o site, entregam no tempo prometido e atendem super bem! 
+                Com certeza comprarei mais vezes.</p>
+            <img src="./imagens/review/mirela.png" alt="" class="usuario">
+            <h3>Mirelinha DuGrau</h3>
+            <div class="estrelas">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+        </div>
+
+        <div class="caixa">
+            <img src="./imagens/review/quote-img.png" alt="" class="quote">
+            <p>O projeto foi uma ótima ideia e tem me ajudado bastante, sou eternamente grata!</p>
+            <img src="./imagens/review/barbie.png" alt="" class="usuario">
+            <h3>Barbie DuCaloti</h3>
+            <div class="estrelas">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Aqui termina o reveja da pagina-->
+
+<!--Aqui começa a área de contato da pagina-->
+
+<section class="contato" id="contato">
+    
+    <h1 class="cabecalhos">Contate Nos </h1>
+
+    <div class="row">
+
+        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.560411560271!2d-46.
+        89196968538517!3d-23.51233796566807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.
+        1!3m3!1m2!1s0x94cf03e63bc7a06d%3A0xc14462a7d6d04032!2sITB%20Bras%C3%ADlio%20
+        Flores%20de%20Azevedo%20(FIEB)!5e0!3m2!1spt-BR!2sbr!4v1657614193452!5m2!1spt-BR!2sbr"  allowfullscreen="" loading="lazy" ></iframe>
+
+        <form action="">
+            <h3>Entrar em Contato</h3>
+            <div class="inputBox">
+                <span class="fas fa-user"></span>
+                <input type="text" placeholder="nome">
+            </div>
+            <div class="inputBox">
+                <span class="fas fa-envelope"></span>
+                <input type="email" placeholder="email">
+            </div>
+            <div class="inputBox">
+                <span class="fas fa-phone"></span>
+                <input type="tel" maxlength="14" minlength="14"  placeholder="numero">
+            </div>
+            <input type="submit" value="Contate Agora" class="btn">
+        </form>
+
+    </div>
+</section>
+
+<!--Aqui termina a área de contato da pagina-->
+
+<!--Aqui começa o rodapé da pagina-->
+
+<section class="rodape">
+
+    <div class="compartilhar">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-linkedin"></a>
+        <a href="#" class="fab fa-github"></a>
+    </div>
+
+    <div class="links">
+        <a href="#inicio">Inicio</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#menu">Menu</a>
+        <a href="#produtos">Produtos</a>
+        <a href="#reveja">Reveja</a>
+        <a href="#contato">Contato</a>
+    </div>
+
+    <div class="creditos">Criado pelo estudante <span>Leonardo Lisboa</span> | todos os direitos reservados</div>
+</section>
+
+<!--Aqui acaba a pagina-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--Customização em javaScript-->
+<script src="script.js"></script>
+</body>
+</html>

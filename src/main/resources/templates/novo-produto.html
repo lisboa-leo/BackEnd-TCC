@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Lista de Produto</title>
+</head>
+
+<body>
+    <header>               
+        <div >
+            <nav class="navbar navbar-light navbar-expand-sm d-flex justify-content-between" style="background-color: #78cdff;">
+                <a href="" class="navbar-brand px-5">
+                    <img src="../static/imagens/Pagina de produtos/PHARM.png" width="70" height="40" class="d-inline-block align-top">
+                </a>
+                <ul class="navbar-nav">
+                    <li><a href="novo-produto.html" class="nav-link">Novos produtos</a></li>
+                    <li><a th:href="@{/pharmexpress/produtos/lista-produtos}" class="nav-link">Gerenciamento de produtos</a></li>
+                </ul>
+                <ul class="navbar-nav px-5">
+                    <li class="nav-item d-flex flex-direction-row align-items-stretch">
+                        <a href="" class="nav-link"><i class="fa-solid fa-user"></i></a>
+                        <a href="" id="bemvindo" class="nav-link text-decoration-none">Bem vindo, Adm!</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link"><i class="fa-solid fa-bars"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <main class="container mt-4">
+        
+        <div class="container my-5">
+            <div>
+                <h2 class="my-5">Novo Produto</h2>
+            </div>
+
+            <div class="row rounded">
+                <div class="border p-2 rounded">
+                    <form action="" method="post" enctype="multipart/form-data" th:object="${formproduto}" th:action"@{/pharmexpress/produtos/novo-produto}">
+                        <div class="row mt-5 p-3">
+                            <div class="column col-md-6 w-50 h-50 mt-5">
+                                <input type="file" id="imagem" name="imagem" accept="image/*" class="mt-5" required>
+                            </div>
+                            <div class="form-group col-md-9">
+                                <label for="nome" class="col-form-label">Nome:</label>
+                                <input type="text" id="nome" placeholder="Nome" th:field="*{nome}" class="form-control" required>
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="tipoProduto" class="col-form-label">Tipo do Produto:</label>
+                                <select class="form-control" id="tipo" name="tipo" required>
+                                    <option th:value="${tipo}" >Escolha o Tipo</option>
+                                    <option th:value="${tipo}" >Beleza</option>
+                                    <option th:value="${tipo}" >Saúde</option>
+                                    <option th:value="${tipo}" >Higiene</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group col-md-5">
+                                <label for="codbarra" class="col-form-label">Código do produto:</label>
+                                <input type="text" id="codbarra" th:field="*{codigobarra}" placeholder="Digite a Código de Barras" class="form-control" required>
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="preco" class="col-form-label">Preço:</label>
+                                <input type="text" id="preco" th:field="*{preco}" placeholder="Digite o Preço" class="form-control" required>
+                            </div>
+
+                            <div class="form-group col-md-3">
+                                <label for="quantidade" class="col-form-label">Quantidade:</label>
+                                <input type="number" id="quantidade" th:field="*{quantidade}" placeholder="Escolha a quantidade" class="form-control" required>
+                            </div>
+
+                            <div class="form-group col-md-12">
+                                <label for="descricao" class="col-form-label">Descrição:</label>
+                                <textarea id="descricao" class="form-control form-control-sm" rows="4" placeholder="Descrição" th:field="*{descricao}" required></textarea>
+                            </div>
+
+                            <div class="form-group cold-md-5 mt-4 d-flex justify-content-end">
+                                <input type="submit" value="Cadastrar" class="btn btn-primary">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+    </main>
+</body>
+
+</html>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>

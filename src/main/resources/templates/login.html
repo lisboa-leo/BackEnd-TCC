@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="shortcut icon" href="./imagens/logo.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body class="bg-light">
+    <div id="container" class="container d-flex flex-column justify-content-center align-items-center pt-5" style="width: 35rem;">
+        <form th:action"@{index.html}" class="container">
+            <div id="box" class="row border rounded p-3 m-5 bg-white">
+                <h2 class="text-center pt-5 pb-5">Acessar Conta</h2>
+                <div class="form-group pl-2 pr-2 pt-3 pb-3">
+                    <input type="text" name="nome" id="nome" placeholder="Login" class="form-control" required>
+
+                </div>
+                <div class="form-group pl-2 pr-2 pt-3 pb-1">
+                    <input type="text" name="nome" id="nome" placeholder="Senha" class="form-control" required>
+                </div>
+                <div class="from-group d-flex justify-content-between pl-1 pr-1">
+                    <div class="d-flex justify-content-start">
+                        <input type="checkbox" name="lembraDeMim" id="lembraDeMim">
+                        <label for="">Lembra de mim</label>
+                    </div>
+                    <a href="" class="d-flex justify-content-end">Esqueci a minha senha</a>
+                </div>
+                <div class="form-group pt-5 d-flex justify-content-center">
+                    <input class="btn btn-primary " type="Submit" value="Acessar">
+                </div>
+                <div class="form-group text-center pt-5">
+                    <h6>Ainda não é cliente? <a href="cadastro.html">Cadastre-se agora</a></h6>
+                </div>
+            </div>
+        </form>
+    </div>
