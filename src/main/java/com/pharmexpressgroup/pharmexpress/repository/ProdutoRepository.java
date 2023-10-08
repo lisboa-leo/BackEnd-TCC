@@ -12,4 +12,5 @@ public interface ProdutoRepository extends JpaRepository<Produto, Integer>{
 
     @Transactional
     void deleteByCodProduto(Integer codProduto);
+
 }

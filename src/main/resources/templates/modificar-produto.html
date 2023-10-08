@@ -44,7 +44,7 @@
 
             <div class="row rounded">
                 <div class="border p-2 rounded">
-                    <form method="post" enctype="multipart/form-data" th:object="${editarproduto}" th:action"@{/pharmexpress/produtos/editarproduto}">
+                    <form method="post" enctype="multipart/form-data" th:object="${editarprodutos}" th:action"@{/pharmexpress/produtos/editarprodutos/{codProduto}">
                         <div class="row mt-5 p-3">
                             <div class="column col-md-6 w-50 h-50 mt-5">
                                 <input type="file" id="imagem" name="imagem" accept="image/*" class="mt-5" required>
@@ -84,8 +84,7 @@
                                 <textarea id="descricao" class="form-control form-control-sm" rows="4" placeholder="Descrição" th:field="*{descricao}" required></textarea>
                             </div>
 
-                            <div class="form-group cold-md-5 mt-4 d-flex justify-content-between">
-                                <input type="submit" value="Excluir Produto" class="btn btn-danger">
+                            <div class="form-group cold-md-5 mt-4 d-flex justify-content-end">
                                 <input type="submit" value="Salvar" class="btn btn-primary">
                             </div>
                         </div>
@@ -98,9 +97,3 @@
 </body>
 
 </html>
-
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
-<script>
-    $('#preco').mask("#.##0,00", {reverse: true});
-</script>

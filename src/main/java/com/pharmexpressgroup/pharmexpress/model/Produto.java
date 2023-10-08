@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "produto")
 public class Produto {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer codProduto;
@@ -22,7 +22,7 @@ public class Produto {
 	private int quantidade;
 	private String codigobarra;
 	private boolean codStatusProduto;
-	
+
 	public Integer getCodProduto() {
 		return codProduto;
 	}
@@ -71,10 +71,5 @@ public class Produto {
 	public void setCodigobarra(String codigobarra) {
 		this.codigobarra = codigobarra;
 	}
-	
-	
-	
 
-	
-	
 }
