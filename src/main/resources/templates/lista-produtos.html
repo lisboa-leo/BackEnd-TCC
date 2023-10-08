@@ -11,76 +11,82 @@
 </head>
 
 <body>
-    <header>               
-        <div >
-            <nav class="navbar navbar-light navbar-expand-sm d-flex justify-content-between" style="background-color: #78cdff;">
-                <a href="" class="navbar-brand px-5">
-                    <img src="../static/imagens/Pagina de produtos/PHARM.png" width="70" height="40" class="d-inline-block align-top">
-                </a>
-                <ul class="navbar-nav">
-                    <li><a href="novo-produto.html" class="nav-link">Novos produtos</a></li>
-                    <li><a href="lista-produtos.html" class="nav-link">Gerenciamento de produtos</a></li>
-                </ul>
-                <ul class="navbar-nav px-5">
-                    <li class="nav-item d-flex flex-direction-row align-items-stretch">
-                        <a href="" class="nav-link"><i class="fa-solid fa-user"></i></a>
-                        <a href="" id="bemvindo" class="nav-link text-decoration-none">Bem vindo, Adm!</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link"><i class="fa-solid fa-bars"></i></a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header>
+    <div >
+        <nav class="navbar navbar-light navbar-expand-sm d-flex justify-content-between" style="background-color: #78cdff;">
+            <a href="" class="navbar-brand px-5">
+                <img src="./imagens/Pagina de produtos/PHARM.png" width="70" height="40" class="d-inline-block align-top">
+            </a>
+            <ul class="navbar-nav">
+                <li><a th:href="@{/pharmexpress/produtos/novo-produto}" class="nav-link">Novos produtos</a></li>
+                <li><a th:href="@{/pharmexpress/produtos/lista-produtos}" class="nav-link">Gerenciamento de produtos</a></li>
+            </ul>
+            <ul class="navbar-nav px-5">
+                <li class="nav-item d-flex flex-direction-row align-items-stretch">
+                    <a href="" class="nav-link"><i class="fa-solid fa-user"></i></a>
+                    <a href="" id="bemvindo" class="nav-link text-decoration-none">Bem vindo, Adm!</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" class="nav-link"><i class="fa-solid fa-bars"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
 
-    <main class="container mt-4">
-        <div class="border rounded p-5">
-            <div>
-                <a th:href="@{/pharmexpress/produtos/novo-produto}" class="btn btn-primary">
-                    <i class="fas fa-cart-plus ml-2"></i>
-                    Novo Produto
-                </a>
-            </div>
-    
-            <div>
-                <h2 class="my-5">Gerenciamento de produtos</h2>
-                <table class="table table-striped table-responsive-md">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Nome</th>
-                            <th>Tipo do Produto</th>
-                            <th>Código de Barra</th>
-                            <th>Preço</th>
-                            <th>Quantidade</th>
-                            <th>Descrição</th>
-                            <th>Editar</th>
-                        </tr>
-                    </thead>
-    
-                    <tbody>
-                        <tr th:each="produto : ${listaDeProdutos}">
-                            <td th:text="${produto.codProduto}"></td>
-                            <td th:text="${produto.nome}"></td>
-                            <td th:text="${produto.tipo}"></td>
-                           <td th:text="${produto.codigobarra}"></td>
-                            <td th:text="${#numbers.formatCurrency(produto.preco)}"></td>
-                            <td th:text="${produto.quantidade}"></td>
-                            <td th:text="${produto.descricao}"></td>
-                            <td>
-                                <a th:href="@{/pharmexpress/produtos/editarproduto}" class="btn btn-primary">
-                                    <i class="fas fa-edit m1-2"></i>
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+<main class="container mt-4">
+    <div class="border rounded p-5">
+        <div>
+            <a th:href="@{/pharmexpress/produtos/novo-produto}" class="btn btn-primary">
+                <i class="fas fa-cart-plus ml-2"></i>
+                Novo Produto
+            </a>
         </div>
-    
-    </main>
+
+        <div>
+            <h2 class="my-5">Gerenciamento de produtos</h2>
+            <table class="table table-striped table-responsive-md">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Tipo do Produto</th>
+                    <th>Código de Barra</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                    <th>Descrição</th>
+                    <th>Editar</th>
+                    <th>Remover</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each="produto : ${listaDeProdutos}">
+                    <td th:text="${produto.codProduto}"></td>
+                    <td th:text="${produto.nome}"></td>
+                    <td th:text="${produto.tipo}"></td>
+                    <td th:text="${produto.codigobarra}"></td>
+                    <td th:text="${#numbers.formatCurrency(produto.preco)}"></td>
+                    <td th:text="${produto.quantidade}"></td>
+                    <td th:text="${produto.descricao}"></td>
+                    <td>
+                        <a th:href="@{/pharmexpress/produtos/editarproduto/{codProduto} (codProduto=${produto.codProduto})}" class="btn btn-primary">
+                            <i class="fas fa-edit m1-2"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" th:href="@{/pharmexpress/produtos/remover/{codProduto} (codProduto=${produto.codProduto})}">
+                            Remover
+                        </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</main>
 </body>
 
 </html>

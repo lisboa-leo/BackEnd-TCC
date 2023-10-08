@@ -11,14 +11,14 @@
 </head>
 
 <body>
-    <header>               
+    <header>
         <div >
             <nav class="navbar navbar-light navbar-expand-sm d-flex justify-content-between" style="background-color: #78cdff;">
                 <a href="" class="navbar-brand px-5">
-                    <img src="../static/imagens/Pagina de produtos/PHARM.png" width="70" height="40" class="d-inline-block align-top">
+                    <img src="./imagens/Pagina de produtos/PHARM.png" width="70" height="40" class="d-inline-block align-top">
                 </a>
                 <ul class="navbar-nav">
-                    <li><a href="novo-produto.html" class="nav-link">Novos produtos</a></li>
+                    <li><a th:href="@{/pharmexpress/produtos/novo-produto}" class="nav-link">Novos produtos</a></li>
                     <li><a th:href="@{/pharmexpress/produtos/lista-produtos}" class="nav-link">Gerenciamento de produtos</a></li>
                 </ul>
                 <ul class="navbar-nav px-5">
@@ -36,7 +36,7 @@
 
 
     <main class="container mt-4">
-        
+
         <div class="container my-5">
             <div>
                 <h2 class="my-5">Novo Produto</h2>
@@ -92,7 +92,7 @@
                 </div>
             </div>
         </div>
-    
+
     </main>
 </body>
 

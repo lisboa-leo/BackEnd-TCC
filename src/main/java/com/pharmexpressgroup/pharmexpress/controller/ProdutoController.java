@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -49,11 +50,13 @@ public String listaProdutos(Produto produto, Model model) {
 	return "lista-produtos";
  }
 
-@GetMapping("/modificar-produto")
-public String editarProdutos(Produto produto, Model model) {
-	model.addAttribute("editarproduto", produto);
-		
-	return "modificar-produto";
+ @GetMapping("/remover/{codProduto}")
+ public String removerProduto(@PathVariable("codProduto") Integer codProduto) {
+	produtoRepository.deleteByCodProduto(codProduto);
+	return "redirect:/pharmexpress/produtos/lista-produtos";
 }
+
+
+
 		
 }
