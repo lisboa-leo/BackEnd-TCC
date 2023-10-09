@@ -14,77 +14,76 @@ public class Cliente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Integer codCliente;
 	private String nome;
 	private String sobrenome;
-	private Long cpf;
+	private String cpf;
 	private String email;
 	private String senha;
-	private LocalDateTime dataNasc;
+	private String dataNasc;
 	private String telefone;
-	private boolean codStatusCliente;
-	
-	public void setId(Long id) {
-		this.id = id;
+
+	public Integer getCodCliente() {
+		return codCliente;
 	}
-	public Long getId() {
-		return this.id;
+
+	public void setCodCliente(Integer codCliente) {
+		this.codCliente = codCliente;
 	}
-	
+
+	public String getNome() {
+		return nome;
+	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getNome() {
-		return this.nome;
+
+	public String getSobrenome() {
+		return sobrenome;
 	}
-	
+
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
-	public String getSobrenome() {
-		return this.sobrenome;
+
+	public String getCpf() {
+		return cpf;
 	}
-	
-	public void setCpf(Long cpf) {
+
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public Long getCpf() {
-		return this.cpf;
+
+	public String getEmail() {
+		return email;
 	}
-	
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getEmail() {
-		return this.email;
+
+	public String getSenha() {
+		return senha;
 	}
-	
+
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public String getSenha() {
-		return this.senha;
+
+	public String getDataNasc() {
+		return dataNasc;
 	}
-	
-	public void setDataNasc(LocalDateTime dataNasc) {
+
+	public void setDataNasc(String dataNasc) {
 		this.dataNasc = dataNasc;
 	}
-	public LocalDateTime getDataNasc() {
-		return this.dataNasc;
+
+	public String getTelefone() {
+		return telefone;
 	}
-	
+
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	public String getTelefone() {
-		return this.telefone;
-	}
-	
-	public void setCodStatusCliente(boolean codStatusCliente) {
-		this.codStatusCliente = codStatusCliente;
-	}
-	public boolean getCodeStatusCliente() {
-		return this.codStatusCliente;
-	}
-	
 }

@@ -44,7 +44,7 @@
 
             <div class="row rounded">
                 <div class="border p-2 rounded">
-                    <form action="" method="post" enctype="multipart/form-data" th:object="${formproduto}" th:action"@{/pharmexpress/produtos/novo-produto}">
+                    <form method="post" enctype="multipart/form-data" th:object="${formproduto}" th:action"@{/pharmexpress/produtos/novo-produto}">
                         <div class="row mt-5 p-3">
                             <div class="column col-md-6 w-50 h-50 mt-5">
                                 <input type="file" id="imagem" name="imagem" accept="image/*" class="mt-5" required>

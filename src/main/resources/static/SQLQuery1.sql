@@ -3,14 +3,18 @@ create database PharmExpress
 use  PharmExpress
 
 
+
 create table cliente(
 	cod_cliente int IDENTITY(1,1) primary key,
 	nome varchar(50) not null,
-	cpf int unique not null,
+	sobrenome varchar(30) not null,
+	cpf varchar(14) unique not null,
 	email varchar(30) not null,
+	telefone varchar(20) not null,
 	senha varchar(30) not null,
 	dataDeNascimento varchar(30) not null
 );
+
 
 create table cliente_telefone(
 	cod_telefone int primary key not null,
@@ -73,9 +77,9 @@ create table perfil(
 );
 
 
+
 alter table cliente
-	add tipo varchar not null,
-	fk_cod_perfil integer,
+	add fk_cod_perfil integer,
 	constraint fk_cliente_perfil foreign key (fk_cod_perfil) references perfil (cod_perfil);
 	
 

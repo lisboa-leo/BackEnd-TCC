@@ -11,15 +11,15 @@
 </head>
 <body class="bg-light">
     <div id="container" class="container d-flex flex-column justify-content-center align-items-center pt-5" style="width: 35rem;">
-        <form th:action"@{index.html}" class="container">
+        <form th:action="@{/pharmexpress/usuario/login}" method="post" class="container">
             <div id="box" class="row border rounded p-3 m-5 bg-white">
                 <h2 class="text-center pt-5 pb-5">Acessar Conta</h2>
                 <div class="form-group pl-2 pr-2 pt-3 pb-3">
-                    <input type="text" name="nome" id="nome" placeholder="Login" class="form-control" required>
+                    <input type="text" name="email" id="email" placeholder="Login" class="form-control" required>
 
                 </div>
                 <div class="form-group pl-2 pr-2 pt-3 pb-1">
-                    <input type="text" name="nome" id="nome" placeholder="Senha" class="form-control" required>
+                    <input type="text" name="senha" id="senha" placeholder="Senha" class="form-control" required>
                 </div>
                 <div class="from-group d-flex justify-content-between pl-1 pr-1">
                     <div class="d-flex justify-content-start">
@@ -28,11 +28,12 @@
                     </div>
                     <a href="" class="d-flex justify-content-end">Esqueci a minha senha</a>
                 </div>
+                <div th:if="${erro != null} " th:text="${erro}" class="alert alert-danger" role="alert"></div>
                 <div class="form-group pt-5 d-flex justify-content-center">
                     <input class="btn btn-primary " type="Submit" value="Acessar">
                 </div>
                 <div class="form-group text-center pt-5">
-                    <h6>Ainda não é cliente? <a href="cadastro.html">Cadastre-se agora</a></h6>
+                    <h6>Ainda não é cliente? <a th:href="@{/pharmexpress/usuario/cadastro}">Cadastre-se agora</a></h6>
                 </div>
             </div>
         </form>

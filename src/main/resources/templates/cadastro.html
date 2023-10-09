@@ -11,50 +11,50 @@
 </head>
 <body class="bg-light">
     <div id="container" class="container w-auto pt-5">
-        <form action="login.html">
+        <form method="post" enctype="multipart/form-data" th:object="${cadastro}" th:action"@{/pharmexpress/usuario/cadastro}">
             <div id="box" class="row border rounded p-5 m-5 d-flex align-items-center bg-white">
                 <div class="form-group col-md-6">
                     <label for="" class="form-label">Nome:</label>
-                    <input type="text" name="nome" id="nome" placeholder="Digite o nome" class="form-control" required>
+                    <input type="text" name="nome" id="nome" placeholder="Digite o nome" class="form-control" th:field="*{nome}" required>
                     
                 </div>
                 <div class="form-group col-md-6">
                     <label for="" class="form-label">Sobrenome:</label>
-                    <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite o sobrenome" class="form-control" required>
+                    <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite o sobrenome" class="form-control" th:field="*{sobrenome}" required>
 
                 </div>
                 <div class="form-group col-md-6">
                     <label for="" class="form-label">Telefone:</label>
-                    <input type="text" name="telefone" id="telefone" placeholder="Digite o telefone" class="form-control" required>
+                    <input type="text" name="telefone" id="telefone" placeholder="Digite o telefone" class="form-control" th:field="*{telefone}" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="" class="form-label">Data de Nascimento:</label>
-                    <input type="date" name="data" id="data" class="form-control" required>
+                    <input type="date" name="data" id="data" class="form-control" th:field="*{dataNasc}" required>
 
                 </div>
                 <div class="form-group col-md-6">
                     <label for="" class="form-label">E-mail:</label>
-                    <input type="email" name="email" id="email" placeholder="Digite o email" class="form-control" required>
+                    <input type="email" name="email" id="email" placeholder="Digite o email" class="form-control" th:field="*{email}" required>
 
                 </div>
                 <div class="form-group col-md-6">
                     <label for="" class="form-label">CPF:</label>
-                    <input type="text" name="cpf" id="cpf" placeholder="Digite o CPF" class="form-control" required>
+                    <input type="text" name="cpf" id="cpf" placeholder="Digite o CPF" class="form-control" th:field="*{cpf}" required>
 
                 </div>
                 <div class="form-group col-md-6">
                     <label for="" class="form-label">Senha:</label>
-                    <input type="password" name="senha" id="senha" placeholder="Digite a senha" class="form-control" required onchange="confereSenha();">
+                    <input type="password" name="senha" id="senha" placeholder="Digite a senha" class="form-control" th:field="*{senha}" required onchange="confereSenha();">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="" class="form-label">Confirme sua Senha:</label>
-                    <input type="password" name="confirmarSenha" id="confirmarSenha" placeholder="Confime a senha" class="form-control" required onchange="confereSenha();">
+                    <input type="password" name="confirmarSenha" id="confirmarSenha" placeholder="Confime a senha" class="form-control"  required onchange="confereSenha();">
                 </div>
                 <div class="form-group pt-5 d-flex justify-content-center">
                     <input class="btn btn-primary " type="Submit" value="Cadastrar">
                 </div>
                 <div class="d-flex justify-content-center pt-3">
-                    <h6><a href="login.html" style="color: #000;cursor: pointer;">Já tenho cadastrado!</a></h6>
+                    <h6><a th:href="@{/pharmexpress/usuario/login}" style="color: #000;cursor: pointer;">Já tenho cadastrado!</a></h6>
                 </div>
             </div>
         </form>
