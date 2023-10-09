@@ -56,11 +56,11 @@
 
                             <div class="form-group col-md-3">
                                 <label for="tipoProduto" class="col-form-label">Tipo do Produto:</label>
-                                <select class="form-control" id="tipo" name="tipo" required>
-                                    <option th:value="${tipo}" >Escolha o Tipo</option>
-                                    <option th:value="${tipo}" >Beleza</option>
-                                    <option th:value="${tipo}" >Saúde</option>
-                                    <option th:value="${tipo}" >Higiene</option>
+                                <select class="form-control" id="tipo" name="tipo" th:field="*{tipo}" required>
+                                    <option value="">Escolha o Tipo</option>
+                                    <option value="Beleza">Beleza</option>
+                                    <option value="Saúde">Saúde</option>
+                                     <option value="Higiene">Higiene</option>
                                 </select>
                             </div>
 

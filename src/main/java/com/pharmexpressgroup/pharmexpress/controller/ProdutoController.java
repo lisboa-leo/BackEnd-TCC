@@ -15,6 +15,7 @@ import com.pharmexpressgroup.pharmexpress.repository.ProdutoRepository;
 @RequestMapping("/pharmexpress/produtos")
 public class ProdutoController {
 
+
 	@Autowired
 	private ProdutoRepository produtoRepository;
 
@@ -57,10 +58,10 @@ public class ProdutoController {
 									  @ModelAttribute("editarprodutos") Produto produto,
 									  Model model){
 
-		// Obtém o produto existente do banco de dados
+
 		Produto updateProduto = produtoRepository.getById(codProduto);
 
-		// Atualiza os campos do produto existente com os novos valores
+
 		updateProduto.setNome(produto.getNome());
 		updateProduto.setTipo(produto.getTipo());
 		updateProduto.setCodigobarra(produto.getCodigobarra());
@@ -68,7 +69,7 @@ public class ProdutoController {
 		updateProduto.setPreco(produto.getPreco());
 		updateProduto.setDescricao(produto.getDescricao());
 
-		// Salva as alterações no banco de dados
+
 		produtoRepository.save(updateProduto);
 
 		return "redirect:/pharmexpress/produtos/lista-produtos";
