@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
 
-    @Query(value = "select * from cliente where email = :email and senha = :senha", nativeQuery = true)
-    public Cliente Login(String email, String senha);
+    @Query(value = "select * from cliente where usuario = :usuario and senha = :senha", nativeQuery = true)
+    public Cliente Login(String usuario, String senha);
 
 }

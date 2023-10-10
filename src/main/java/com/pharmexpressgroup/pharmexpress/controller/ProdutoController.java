@@ -3,6 +3,7 @@ package com.pharmexpressgroup.pharmexpress.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.pharmexpressgroup.pharmexpress.model.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -35,7 +36,7 @@ public class ProdutoController {
 	}
 
 	@GetMapping("/lista-produtos")
-	public String listaProdutos(Produto produto, Model model) {
+	public String listaProdutos(Produto produto,Cliente cliente ,Model model) {
 
 		List<Produto> listaDeProdutos = new ArrayList<Produto>();
 
@@ -44,6 +45,7 @@ public class ProdutoController {
 		listaDeProdutos = produtoRepository.findAll();
 
 		model.addAttribute("listaDeProdutos", listaDeProdutos);
+		model.addAttribute("usuario", cliente);
 
 		return "lista-produtos";
 	}

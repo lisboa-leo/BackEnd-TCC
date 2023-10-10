@@ -14,13 +14,13 @@
         <form method="post" enctype="multipart/form-data" th:object="${cadastro}" th:action"@{/pharmexpress/usuario/cadastro}">
             <div id="box" class="row border rounded p-5 m-5 d-flex align-items-center bg-white">
                 <div class="form-group col-md-6">
-                    <label for="" class="form-label">Nome:</label>
-                    <input type="text" name="nome" id="nome" placeholder="Digite o nome" class="form-control" th:field="*{nome}" required>
+                    <label for="" class="form-label">Nome completo:</label>
+                    <input type="text" name="nome" id="nome" placeholder="Digite o nome completo" class="form-control" th:field="*{nome}" required>
                     
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="" class="form-label">Sobrenome:</label>
-                    <input type="text" name="sobrenome" id="sobrenome" placeholder="Digite o sobrenome" class="form-control" th:field="*{sobrenome}" required>
+                    <label for="" class="form-label">Nome de usuário:</label>
+                    <input type="text" name="usuario" id="usuario" placeholder="Digite o nome do usuário" class="form-control" th:field="*{usuario}" required>
 
                 </div>
                 <div class="form-group col-md-6">
@@ -46,7 +46,7 @@
                     <label for="" class="form-label">Senha:</label>
                     <input type="password" name="senha" id="senha" placeholder="Digite a senha" class="form-control" th:field="*{senha}" required onchange="confereSenha();">
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-6 ">
                     <label for="" class="form-label">Confirme sua Senha:</label>
                     <input type="password" name="confirmarSenha" id="confirmarSenha" placeholder="Confime a senha" class="form-control"  required onchange="confereSenha();">
                 </div>

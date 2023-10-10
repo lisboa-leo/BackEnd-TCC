@@ -29,7 +29,7 @@ public class ClienteController {
 	public String addCadastro(Cliente cliente, Model model){
 		Cliente clienteDb = clienteRepository.save(cliente);
 
-		return "redirect:/pharmexpress/usuario/cadastro";
+		return "redirect:/pharmexpress/usuario/login";
 	}
 
 	@GetMapping("/login")
@@ -40,13 +40,14 @@ public class ClienteController {
 
 	@PostMapping("/login")
 	public String logar(Cliente cliente, Model model){
-		Cliente log = this.clienteRepository.Login(cliente.getEmail(), cliente.getSenha()) ;
+		Cliente log = this.clienteRepository.Login(cliente.getUsuario(), cliente.getSenha()) ;
 		if(log != null){
 			return "redirect:/pharmexpress/produtos/lista-produtos";
 		}
 		model.addAttribute("erro", "Usuário ou senha inválidos!");
 		return "login";
 	}
+
 
 
 }

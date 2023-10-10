@@ -16,7 +16,7 @@ public class Cliente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer codCliente;
 	private String nome;
-	private String sobrenome;
+	private String usuario;
 	private String cpf;
 	private String email;
 	private String senha;
@@ -39,12 +39,12 @@ public class Cliente {
 		this.nome = nome;
 	}
 
-	public String getSobrenome() {
-		return sobrenome;
+	public String getUsuario() {
+		return usuario;
 	}
 
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getCpf() {
