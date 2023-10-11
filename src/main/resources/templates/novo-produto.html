@@ -15,7 +15,7 @@
         <div >
             <nav class="navbar navbar-light navbar-expand-sm d-flex justify-content-between" style="background-color: #78cdff;">
                 <a href="" class="navbar-brand px-5">
-                    <img src="./imagens/Pagina de produtos/PHARM.png" width="70" height="40" class="d-inline-block align-top">
+                    <img src="/imagens/Pagina de produtos/PHARM.png" width="70" height="40" class="d-inline-block align-top">
                 </a>
                 <ul class="navbar-nav">
                     <li><a th:href="@{/pharmexpress/produtos/novo-produto}" class="nav-link">Novos produtos</a></li>
@@ -57,7 +57,7 @@
                             <div class="form-group col-md-3">
                                 <label for="tipoProduto" class="col-form-label">Tipo do Produto:</label>
                                 <select class="form-control" id="tipo" name="tipo"  required>
-                                    <option value="">Escolha o Tipo</option>
+                                    <option disabled>Escolha o Tipo</option>
                                     <option value="Beleza">Beleza</option>
                                     <option value="Saúde">Saúde</option>
                                     <option value="Higiene">Higiene</option>

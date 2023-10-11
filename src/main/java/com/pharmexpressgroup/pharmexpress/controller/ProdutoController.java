@@ -46,7 +46,6 @@ public class ProdutoController {
 
 		model.addAttribute("listaDeProdutos", listaDeProdutos);
 		model.addAttribute("usuario", cliente);
-
 		return "lista-produtos";
 	}
 

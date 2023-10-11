@@ -1,16 +1,15 @@
 package com.pharmexpressgroup.pharmexpress.model;
 
 import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-
-import java.time.LocalDateTime;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "cliente")
 public class Cliente {
+	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

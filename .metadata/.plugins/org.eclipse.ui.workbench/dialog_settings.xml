@@ -8,4 +8,10 @@
 	</section>
 	<section name="NewWizardAction">
 	</section>
+	<section name="PreferencesImportWizard">
+		<item key="" value="D:\IMPORTAR CONFIGURAÇÕES ECLIPSE E STS\config.epf"/>
+		<list key="WizardPreferencesExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="D:\IMPORTAR CONFIGURAÇÕES ECLIPSE E STS\config.epf"/>
+		</list>
+	</section>
 </section>
