@@ -94,9 +94,7 @@
                 <a href="#" class="fas fa-heart"></a>
                 <a href="#" class="fas fa-eye"></a>
             </div>
-            <div class="imagem">
-                <img src="/imagens/Produtos/cimegripe.png" alt="">
-            </div>
+            <img th:each="produto : ${listaDeProdutos}" th:src="'data:image/jpeg;base64,' + ${produto.imagemBase64}" alt="Imagem do Produto">
             <div class="content">
                 <h3 th:text="${produto.nome}"></h3>
                 <div class="estrelas">

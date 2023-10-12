@@ -3,6 +3,7 @@ create database PharmExpress
 use  PharmExpress
 
 
+
 create table cliente(
 	cod_cliente int IDENTITY(1,1) primary key,
 	nome varchar(50) not null,
@@ -30,7 +31,8 @@ create table produto(
 	preco float not null,
 	cod_status_produto bit not null,
 	quantidade integer not null,
-	codigobarra varchar(30) not null
+	codigobarra varchar(30) not null,
+	foto varbinary(max) not null
 );
 
 select * from produto

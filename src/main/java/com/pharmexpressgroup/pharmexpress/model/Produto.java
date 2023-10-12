@@ -1,10 +1,6 @@
 package com.pharmexpressgroup.pharmexpress.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "produto")
@@ -21,6 +17,10 @@ public class Produto {
 	private boolean codStatusProduto;
 	private String tipo;
 
+	@Lob
+	private byte[] foto;
+
+	private String imagemBase64;
 
 	public Integer getCodProduto() {
 		return codProduto;
@@ -71,6 +71,22 @@ public class Produto {
 
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
+	}
+
+	public byte[] getFoto() {
+		return foto;
+	}
+
+	public void setFoto(byte[] foto) {
+		this.foto = foto;
+	}
+
+	public String getImagemBase64() {
+		return imagemBase64;
+	}
+
+	public void setImagemBase64(String imagemBase64) {
+		this.imagemBase64 = imagemBase64;
 	}
 
 }
