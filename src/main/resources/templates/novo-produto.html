@@ -48,8 +48,8 @@
                     <form method="post" enctype="multipart/form-data" th:object="${formproduto}" th:action"@{/pharmexpress/produtos/novo-produto}">
                         <div class="row mt-3 p-3">
                             <div class="form-group col-md-5">
-                                <img id="preView" alt="..." class="rounded mx-auto d-block img-fluid"/>
-                                <input type="file" class="form-control mt-3" id="uploadImage"  name="file" accept="image/*" onchange="preViewImg();" required/>
+                                <img id="preView" alt="..." class="rounded mx-auto d-block img-fluid w-50 h-50"/>
+                                <input type="file" class="form-control mt-1" id="uploadImage" name="file" accept="image/*" onchange="preViewImg();" required />
                             </div>
 
                             <div class="form-group col-md-9">

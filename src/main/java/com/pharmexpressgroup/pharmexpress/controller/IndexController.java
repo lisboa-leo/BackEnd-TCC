@@ -23,16 +23,6 @@ public class IndexController {
 
         List<Produto> listaProdutos = repo.findAll();
 
-        for (Produto produto : listaProdutos) {
-            // Obtenha os bytes da imagem da classe Produto
-            byte[] imagemBytes = produto.getFoto();
-
-            // Converta os bytes da imagem para Base64
-            String imagemBase64 = Base64.getEncoder().encodeToString(imagemBytes);
-
-            // Defina a representação Base64 da imagem no objeto Produto
-            produto.setImagemBase64(imagemBase64);
-        }
 
         model.addAttribute("listaDeProdutos", listaProdutos);
         return "index";

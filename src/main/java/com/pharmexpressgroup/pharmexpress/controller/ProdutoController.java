@@ -1,7 +1,11 @@
 package com.pharmexpressgroup.pharmexpress.controller;
 
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +27,7 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/pharmexpress/produtos")
 public class ProdutoController {
 
+	private static String caminhoImagens = "C:\\Users\\Lisboa\\Documents\\PROJETOS\\TCC - Pharm Express\\BackEnd\\BackEnd-TCC\\src\\main\\resources\\static\\imagens\\img-produtos";
 
 	@Autowired
 	private ProdutoRepository produtoRepository;
@@ -35,22 +40,36 @@ public class ProdutoController {
 	}
 
 	@PostMapping("/novo-produto")
-	public String addProdutos(@ModelAttribute("formproduto") Produto produto, @RequestParam("file") MultipartFile file, Model model) {
+	public String addProdutos(Produto produto, Model model, @RequestParam("file") MultipartFile arquivo) {
 		produto.setCodStatusProduto(true);
 
+		produtoRepository.save(produto);
 		try {
-			// Verifique se um arquivo foi fornecido
-			if (!file.isEmpty()) {
-				byte[] imagemBytes = file.getBytes();
-				produto.setFoto(imagemBytes); // Suponha que seu modelo Produto tenha um campo "imagem" para armazenar os bytes da imagem.
-			}
+			if (!arquivo.isEmpty()){
+				byte[] bytes = arquivo.getBytes();
+				Path caminho = Paths.get(caminhoImagens+String.valueOf(produto.getCodProduto())+ arquivo.getOriginalFilename());
+				Files.write(caminho, bytes);
 
-			produtoRepository.save(produto);
-		} catch (IOException e) {
-			model.addAttribute("erro", "falha ao converter a imagem");
+				produto.setNomeImagem(String.valueOf(produto.getCodProduto())+ arquivo.getOriginalFilename());
+				produtoRepository.save(produto);
+			}
+		}catch(IOException e){
+			e.printStackTrace();
 		}
 
+
 		return "redirect:/pharmexpress/produtos/lista-produtos";
+	}
+
+	@GetMapping("/mostrarImagem/{imagem}")
+	@ResponseBody
+	public byte[] retornarImagem(@PathVariable("imagem") String imagem) throws IOException {
+		System.out.println(imagem);
+		File imagemArquivo = new File(caminhoImagens+imagem);
+		if(imagem != null || imagem.trim().length()>0) {
+			return Files.readAllBytes(imagemArquivo.toPath());
+		}
+		return null;
 	}
 
 	@GetMapping("/lista-produtos")
@@ -75,12 +94,23 @@ public class ProdutoController {
 	@PostMapping("/editarprodutos/{codProduto}")
 	public String updateEditarProduto(@PathVariable("codProduto") Integer codProduto,
 									  @ModelAttribute("editarprodutos") Produto produto,
-									  Model model){
-
-
+									  Model model, @RequestParam("file") MultipartFile arquivo){
 		Produto updateProduto = produtoRepository.getById(codProduto);
+		try {
+			if (!arquivo.isEmpty()){
+				byte[] bytes = arquivo.getBytes();
+				Path caminho = Paths.get(caminhoImagens+String.valueOf(produto.getCodProduto())+ arquivo.getOriginalFilename());
+				Files.write(caminho, bytes);
+
+				produto.setNomeImagem(String.valueOf(produto.getCodProduto())+ arquivo.getOriginalFilename());
+			}
+		}catch(IOException e){
+			e.printStackTrace();
+		}
 
 
+
+		updateProduto.setNomeImagem(produto.getNomeImagem());
 		updateProduto.setNome(produto.getNome());
 		updateProduto.setTipo(produto.getTipo());
 		updateProduto.setCodigobarra(produto.getCodigobarra());

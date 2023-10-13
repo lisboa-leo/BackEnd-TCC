@@ -94,7 +94,7 @@
                 <a href="#" class="fas fa-heart"></a>
                 <a href="#" class="fas fa-eye"></a>
             </div>
-            <img th:each="produto : ${listaDeProdutos}" th:src="'data:image/jpeg;base64,' + ${produto.imagemBase64}" alt="Imagem do Produto">
+            <img th:src="@{/pharmexpress/produtos/mostrarImagem/{imagem}(imagem=${produto.nomeImagem})}">
             <div class="content">
                 <h3 th:text="${produto.nome}"></h3>
                 <div class="estrelas">

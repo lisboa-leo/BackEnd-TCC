@@ -108,11 +108,11 @@ section{
     flex-direction: row;
     align-items: center;
     background: #c2c2c2;
-    flex-wrap: wrap;
 }
 
 .sobre .fileira .imagem img{
     width: 95%;
+    padding-left: 10%;
 }
 
 .sobre .fileira .content{
@@ -207,15 +207,17 @@ section{
 
 .produtos .box-container .caixa img{
     height: 8rem ;
+    margin-top: 1rem;
 }
 
 .produtos .box-container .caixa .content h3{
     color: #545454;
     font-size: 1rem;
+    padding-top: 1.5rem;
 }
 
 .produtos .box-container .caixa .content .estrelas{
-    padding: 1.5rem;
+    padding: 0.5rem 1.5rem;
 }
 
 .produtos .box-container .caixa .content .estrelas i{
@@ -400,11 +402,12 @@ section{
 @media (max-width:991px){
     .sobre .fileira{
         flex-direction: column;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
     }
 
     .sobre .fileira .imagem img{
         width: 100%;
+        padding-left: 0px;
     }
 
     .sobre .fileira .content {

@@ -46,8 +46,9 @@
                 <div class="border p-2 rounded">
                     <form method="post" enctype="multipart/form-data" th:object="${editarprodutos}" th:action"@{/pharmexpress/produtos/editarprodutos/{codProduto}">
                         <div class="row mt-5 p-3">
-                            <div class="column col-md-6 w-50 h-50 mt-5">
-                                <input type="file" id="imagem" name="imagem" accept="image/*" class="mt-5" required>
+                            <div class="form-group col-md-5">
+                                <img id="preView" alt="..." class="rounded mx-auto d-block img-fluid w-50 h-50"/>
+                                <input type="file" class="form-control mt-1" id="uploadImage"  name="file" accept="image/*" onchange="preViewImg();" required />
                             </div>
                             <div class="form-group col-md-9">
                                 <label for="nome" class="col-form-label">Nome:</label>
@@ -97,3 +98,14 @@
 </body>
 
 </html>
+
+<script type="text/javascript">
+    function preViewImg() {
+        var imgPV = new FileReader();
+        imgPV.readAsDataURL(document.getElementById("uploadImage").files[0]);
+
+        imgPV.onload = function (imgPVEvent) {
+            document.getElementById("preView").src = imgPVEvent.target.result;
+        }
+    }
+</script>

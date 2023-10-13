@@ -17,10 +17,8 @@ public class Produto {
 	private boolean codStatusProduto;
 	private String tipo;
 
-	@Lob
-	private byte[] foto;
+	private String nomeImagem;
 
-	private String imagemBase64;
 
 	public Integer getCodProduto() {
 		return codProduto;
@@ -73,20 +71,11 @@ public class Produto {
 		this.tipo = tipo;
 	}
 
-	public byte[] getFoto() {
-		return foto;
+	public String getNomeImagem() {
+		return nomeImagem;
 	}
 
-	public void setFoto(byte[] foto) {
-		this.foto = foto;
+	public void setNomeImagem(String nomeImagem) {
+		this.nomeImagem = nomeImagem;
 	}
-
-	public String getImagemBase64() {
-		return imagemBase64;
-	}
-
-	public void setImagemBase64(String imagemBase64) {
-		this.imagemBase64 = imagemBase64;
-	}
-
 }
