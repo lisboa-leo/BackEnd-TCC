@@ -24,7 +24,7 @@
                 <ul class="navbar-nav px-5">
                     <li class="nav-item d-flex flex-direction-row align-items-stretch">
                         <a href="" class="nav-link"><i class="fa-solid fa-user"></i></a>
-                        <a href="" id="bemvindo" class="nav-link text-decoration-none">Bem vindo, Adm!</a>
+                        <a  id="bemvindo" class="nav-link text-decoration-none">Bem vindo, Admin!</a>
                     </li>
                     <li class="nav-item">
                         <a href="" class="nav-link"><i class="fa-solid fa-bars"></i></a>
@@ -33,6 +33,7 @@
             </nav>
         </div>
     </header>
+    <div th:if="${sucesso != null}" th:text="${sucesso}" class="alert alert-success" role="alert"></div>
 
 
     <main class="container mt-4">
@@ -44,7 +45,6 @@
 
             <div class="row rounded">
                 <div class="border p-2 rounded">
-                    <div th:if="${erro != null} " th:text="${erro}" class="alert alert-danger" role="alert"></div>
                     <form method="post" enctype="multipart/form-data" th:object="${formproduto}" th:action"@{/pharmexpress/produtos/novo-produto}">
                         <div class="row mt-3 p-3">
                             <div class="form-group col-md-5">

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.pharmexpressgroup.pharmexpress.model.Cliente;
+import com.pharmexpressgroup.pharmexpress.repository.ClienteRepository;
 import com.pharmexpressgroup.pharmexpress.util.UploadUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,10 +28,13 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/pharmexpress/produtos")
 public class ProdutoController {
 
-	private static String caminhoImagens = "C:\\Users\\Lisboa\\Documents\\PROJETOS\\TCC - Pharm Express\\BackEnd\\BackEnd-TCC\\src\\main\\resources\\static\\imagens\\img-produtos";
+	private static String caminhoImagens = "Downloads";
 
 	@Autowired
 	private ProdutoRepository produtoRepository;
+
+	@Autowired
+	private ClienteRepository clienteRepository;
 
 	@GetMapping("/novo-produto")
 	public String novoProduto(Produto produto, Model model) {
@@ -57,7 +61,7 @@ public class ProdutoController {
 			e.printStackTrace();
 		}
 
-
+		model.addAttribute("sucesso", "Produto foi cadastrado com sucesso!");
 		return "redirect:/pharmexpress/produtos/lista-produtos";
 	}
 
@@ -77,12 +81,9 @@ public class ProdutoController {
 
 		List<Produto> listaDeProdutos = new ArrayList<Produto>();
 
-		// Buscar no banco de dados
-
 		listaDeProdutos = produtoRepository.findAll();
 
 		model.addAttribute("listaDeProdutos", listaDeProdutos);
-		model.addAttribute("usuario", cliente);
 		return "lista-produtos";
 	}
 

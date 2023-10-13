@@ -12,4 +12,6 @@ public interface ClienteRepository extends JpaRepository<Cliente, Integer> {
     @Query(value = "select * from cliente where usuario = :usuario and senha = :senha", nativeQuery = true)
     public Cliente Login(String usuario, String senha);
 
+
+
 }

@@ -32,8 +32,9 @@ create table produto(
 	cod_status_produto bit not null,
 	quantidade integer not null,
 	codigobarra varchar(30) not null,
-	foto varbinary(max) not null
+	nome_imagem varchar(250)
 );
+
 
 select * from produto
 
