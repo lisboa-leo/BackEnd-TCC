@@ -15,7 +15,7 @@
         <div >
             <nav class="navbar navbar-light navbar-expand-sm d-flex justify-content-between" style="background-color: #78cdff;">
                 <a href="" class="navbar-brand px-5">
-                    <img src="./imagens/Pagina de produtos/PHARM.png" width="70" height="40" class="d-inline-block align-top">
+                    <img src="/imagens/Pagina de produtos/PHARM.png" width="70" height="40" class="d-inline-block align-top">
                 </a>
                 <ul class="navbar-nav">
                     <li><a href="novo-produto.html" class="nav-link">Novos produtos</a></li>
@@ -24,7 +24,7 @@
                 <ul class="navbar-nav px-5">
                     <li class="nav-item d-flex flex-direction-row align-items-stretch">
                         <a href="" class="nav-link"><i class="fa-solid fa-user"></i></a>
-                        <a href="" id="bemvindo" class="nav-link text-decoration-none">Bem vindo, Adm!</a>
+                        <a href="" id="bemvindo" class="nav-link text-decoration-none">Bem vindo, Admin!</a>
                     </li>
                     <li class="nav-item">
                         <a href="" class="nav-link"><i class="fa-solid fa-bars"></i></a>
@@ -82,7 +82,9 @@
                             </div>
 
                             <div class="form-group col-md-5">
-                                <input type="file" class="form-control mt-3" id="uploadImage" name="file" accept="image/*" onchange="preViewImg();" required />
+                                <input type="file" class="form-control mt-3" id="uploadImage" name="file" accept="image/*" onchange="preViewImg();" />
+                                <p class="mt-1">Imagem Atual:
+                                <a th:href="${editarprodutos.nomeImagem}" th:text="${editarprodutos.nomeImagem}"></a> </p>
                                 <img id="preView" alt="..." class="rounded img-fluid w-50 h-50 mt-3"/>
                             </div>
 

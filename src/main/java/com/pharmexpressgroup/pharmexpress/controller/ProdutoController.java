@@ -95,23 +95,25 @@ public class ProdutoController {
 	@PostMapping("/editarprodutos/{codProduto}")
 	public String updateEditarProduto(@PathVariable("codProduto") Integer codProduto,
 									  @ModelAttribute("editarprodutos") Produto produto,
-									  Model model, @RequestParam("file") MultipartFile arquivo){
+									  Model model,
+									  @RequestParam("file") MultipartFile arquivo) {
 		Produto updateProduto = produtoRepository.getById(codProduto);
+
 		try {
-			if (!arquivo.isEmpty()){
+			if (arquivo != null && !arquivo.isEmpty()) {
 				byte[] bytes = arquivo.getBytes();
-				Path caminho = Paths.get(caminhoImagens+String.valueOf(produto.getCodProduto())+ arquivo.getOriginalFilename());
+				Path caminho = Paths.get(caminhoImagens + String.valueOf(produto.getCodProduto()) + arquivo.getOriginalFilename());
 				Files.write(caminho, bytes);
 
-				produto.setNomeImagem(String.valueOf(produto.getCodProduto())+ arquivo.getOriginalFilename());
+				produto.setNomeImagem(String.valueOf(produto.getCodProduto()) + arquivo.getOriginalFilename());
 			}
-		}catch(IOException e){
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-
-
-		updateProduto.setNomeImagem(produto.getNomeImagem());
+		if (arquivo != null && !arquivo.isEmpty()) {
+			updateProduto.setNomeImagem(produto.getNomeImagem());
+		}
 		updateProduto.setNome(produto.getNome());
 		updateProduto.setTipo(produto.getTipo());
 		updateProduto.setCodigobarra(produto.getCodigobarra());
@@ -119,11 +121,11 @@ public class ProdutoController {
 		updateProduto.setPreco(produto.getPreco());
 		updateProduto.setDescricao(produto.getDescricao());
 
-
 		produtoRepository.save(updateProduto);
 
 		return "redirect:/pharmexpress/produtos/lista-produtos";
 	}
+
 
 
 	@GetMapping("/remover/{codProduto}")
